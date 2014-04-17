@@ -3,6 +3,10 @@ package com.neuralnoise.dae.test;
 import java.io.IOException;
 import java.util.List;
 
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
+
 import org.apache.commons.lang3.tuple.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,13 +25,21 @@ import com.neuralnoise.enerj.regularizer.L2Regularizer;
 import com.neuralnoise.enerj.util.MNISTUtils;
 import com.neuralnoise.enerj.util.RandomUtils;
 
-public class SDAETest {
+public class SDAETest extends TestCase {
 
 	private static final Logger log = LoggerFactory.getLogger(SDAETest.class);
 
+	public SDAETest(String testName) {
+		super(testName);
+	}
+
+	public static Test suite() {
+		return new TestSuite(SDAETest.class);
+	}
+	
 	public static void main(String[] args) throws IOException {
 
-		final int BATCH_SIZE = 1000;
+		final int BATCH_SIZE = 100;
 		
 		final String imgPath = SDAETest.class.getResource("/mnist/train-images-idx3-ubyte").getFile(),
 				lblPath = SDAETest.class.getResource("/mnist/train-labels-idx1-ubyte").getFile();

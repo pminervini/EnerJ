@@ -1,4 +1,4 @@
-package com.neuralnoise.ae.test;
+package com.neuralnoise.dae.test;
 
 import java.io.IOException;
 import java.util.List;

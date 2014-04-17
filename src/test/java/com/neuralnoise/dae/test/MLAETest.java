@@ -24,27 +24,28 @@ import com.neuralnoise.enerj.util.MNISTUtils;
 import com.neuralnoise.enerj.util.MatrixUtils;
 import com.neuralnoise.enerj.util.RandomUtils;
 
-public class BMNISTAETest {
+public class MLAETest {
 
-	private static final Logger log = LoggerFactory.getLogger(BMNISTAETest.class);
+	private static final Logger log = LoggerFactory.getLogger(MLAETest.class);
 
 	public static void main(String[] args) throws IOException {
 		
-		final int _N = 1000;
+		final int BATCH_SIZE = 1000;
 		
-		List<Pair<DoubleMatrix2D, Integer>> list = MNISTUtils.getInstances("res/mnist/train-images-idx3-ubyte", "res/mnist/train-labels-idx1-ubyte", _N);
+		final String imgPath = MLAETest.class.getResource("/mnist/train-images-idx3-ubyte").getFile(),
+				lblPath = MLAETest.class.getResource("/mnist/train-labels-idx1-ubyte").getFile();
+		
+		List<Pair<DoubleMatrix2D, Integer>> list = MNISTUtils.getInstances(imgPath, lblPath, BATCH_SIZE);
 
 		final int N = 28 * 28, M = 100;
-		//final int N = 28, M = 10;
 
 		List<DoubleMatrix1D> vs = Lists.newLinkedList();
 		for (Pair<DoubleMatrix2D, Integer> p : list) {
 			vs.add(p.getKey().vectorize().viewPart(0, N));
 		}
 
-		final int batchSize = _N; //500;//500;
 		// list<n x t>
-		List<DoubleMatrix2D> Xs = MatrixUtils.batches(vs, batchSize);
+		List<DoubleMatrix2D> Xs = MatrixUtils.batches(vs, BATCH_SIZE);
 
 		AbstractActivationFunction af = Sigmoid.create();
 		AbstractLossFunction lf = QuadraticLoss.create();
@@ -62,7 +63,6 @@ public class BMNISTAETest {
 		final double thr = 0.001, corr = 1.0; // 0.75;
 		final float step = 0.1f;
 		
-		//DAE ae = new DAE(N, M, af, lf, regularizers, prng);
 		MLAE ae = new MLAE(N, ImmutableList.of(M), af, lf, regularizers, prng);
 
 		log.info("Training the MLAE ..");

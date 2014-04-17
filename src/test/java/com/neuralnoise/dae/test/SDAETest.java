@@ -21,13 +21,19 @@ import com.neuralnoise.enerj.regularizer.L2Regularizer;
 import com.neuralnoise.enerj.util.MNISTUtils;
 import com.neuralnoise.enerj.util.RandomUtils;
 
-public class MNISTAETest {
+public class SDAETest {
 
-	private static final Logger log = LoggerFactory.getLogger(MNISTAETest.class);
+	private static final Logger log = LoggerFactory.getLogger(SDAETest.class);
 
 	public static void main(String[] args) throws IOException {
-		List<Pair<DoubleMatrix2D, Integer>> list = MNISTUtils.getInstances("res/mnist/train-images-idx3-ubyte", "res/mnist/train-labels-idx1-ubyte", 5000);
 
+		final int BATCH_SIZE = 1000;
+		
+		final String imgPath = SDAETest.class.getResource("/mnist/train-images-idx3-ubyte").getFile(),
+				lblPath = SDAETest.class.getResource("/mnist/train-labels-idx1-ubyte").getFile();
+		
+		List<Pair<DoubleMatrix2D, Integer>> list = MNISTUtils.getInstances(imgPath, lblPath, BATCH_SIZE);
+		
 		List<DoubleMatrix1D> xs = Lists.newLinkedList();
 		for (Pair<DoubleMatrix2D, Integer> p : list) {
 			xs.add(p.getKey().vectorize());

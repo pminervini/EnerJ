@@ -20,10 +20,6 @@ public class MNISTUtils {
 		MnistManager m = new MnistManager(imgPath, lblPath);
 
 		int imgCount = m.getImages().getCount();
-		int lblCount = m.getLabels().getCount();
-
-		//assertTrue(imgCount == lblCount);
-
 		List<Pair<DoubleMatrix2D, Integer>> list = Lists.newLinkedList();
 
 		for (int idx = 1; idx <= (n > 0 ? Math.min(n, imgCount) : imgCount); ++idx) {
@@ -37,9 +33,6 @@ public class MNISTUtils {
 				for (int c = 0; c < M.columns(); ++c) {
 					double v = image[r][c];
 					M.set(r, c, v / 255.0);
-					// if (v != 0.0) {
-					// M.set(r, c, 1.0);
-					// }
 				}
 			}
 

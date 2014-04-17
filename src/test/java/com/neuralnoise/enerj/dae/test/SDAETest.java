@@ -1,4 +1,4 @@
-package com.neuralnoise.dae.test;
+package com.neuralnoise.enerj.dae.test;
 
 import java.io.IOException;
 import java.util.List;
@@ -37,8 +37,10 @@ public class SDAETest extends TestCase {
 		return new TestSuite(SDAETest.class);
 	}
 	
-	public static void main(String[] args) throws IOException {
+	public void testSDAE() throws IOException {
 
+		log.info("Testing a Stacked Denoising Auto Encoder ..");
+		
 		final int BATCH_SIZE = 100;
 		
 		final String imgPath = SDAETest.class.getResource("/mnist/train-images-idx3-ubyte").getFile(),
@@ -65,7 +67,7 @@ public class SDAETest extends TestCase {
 
 		SDAE mlae = new SDAE(28 * 28, ImmutableList.of(1000, 1000, 1000), Sigmoid.create(), ce, regularizers, prng);
 
-		final int minits = 500, maxits = 1000;
+		final int minits = 5, maxits = 10;
 		final double step = 0.1, thr = 0.01, corr = 0.75;
 
 		mlae.pretrain(xs, corr, step, thr, minits, maxits);
@@ -83,6 +85,9 @@ public class SDAETest extends TestCase {
 			log.info("[" + t + "] (T) avg loss: " + avgLoss);
 
 			gain = prevAvgLoss - avgLoss;
+			
+			assertTrue(gain > 0.0);
+			
 			prevAvgLoss = avgLoss;
 		}
 

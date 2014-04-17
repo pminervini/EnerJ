@@ -1,4 +1,4 @@
-package com.neuralnoise.dae.test;
+package com.neuralnoise.enerj.dae.test;
 
 import java.io.IOException;
 import java.util.List;
@@ -40,7 +40,9 @@ public class MLAETest extends TestCase {
 		return new TestSuite(MLAETest.class);
 	}
 
-	public static void main(String[] args) throws IOException {
+	public void testMLAE() throws IOException {
+		
+		log.info("Testing a Multi-Layer Auto Encoder ..");
 		
 		final int BATCH_SIZE = 100;
 		
@@ -71,14 +73,16 @@ public class MLAETest extends TestCase {
 
 		DoubleRandomEngine prng = RandomUtils.getPRNG();
 
-		final int minits = 25, maxits = 10000, window = 25;
+		final int minits = 25, maxits = 100, window = 25;
 		final double thr = 0.001, corr = 1.0; // 0.75;
 		final float step = 0.1f;
 		
 		MLAE ae = new MLAE(N, ImmutableList.of(M), af, lf, regularizers, prng);
 
 		log.info("Training the MLAE ..");
+		
 		ae.train(Xs, corr, step, thr, window, minits, maxits);
+		assertTrue(true);
 	}
 
 }

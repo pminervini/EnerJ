@@ -28,18 +28,18 @@ List<Pair<AbstractRegularizer, Double>> regularizers = Lists.newLinkedList();
 	regularizers.add(reg);
 }
 
-// SDAE (28 * 28 is the input size; 1000, 1000, 1000 is the size of the three hidden layers; Sigmoid is the activation function of choice)
+// SDAE (specifying input size and the size of the three hidden layers; Sigmoid is the activation function of choice)
 
-SDAE mlae = new SDAE(28 * 28, ImmutableList.of(1000, 1000, 1000), Sigmoid.create(), loss, regularizers, RandomUtils.getPRNG());
+SDAE mlae = new SDAE(INPUT_SIZE, ImmutableList.of(LAYER_1_SIZE, LAYER_2_SIZE, LAYER_3_SIZE), Sigmoid.create(), loss, regularizers, RandomUtils.getPRNG());
 
 // Number of iterations over the dataset
 final int ITS = 10;
 
-// SGD step size, Input corruption rate
+// SGD step size and Input corruption rate
 final double step = 0.1, corr = 0.75;
 
 // Pretrain each layer generatively using backpropagation
-mlae.pretrain(xs, corr, step, 0.01, minits, maxits);
+mlae.pretrain(xs, corr, step, 0.01, MINITS, MAXITS);
 
 // Train the whole model generatively using backpropagation
 for (int t = 0; t < ITS; ++t) {

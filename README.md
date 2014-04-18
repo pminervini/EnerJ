@@ -1,7 +1,7 @@
 ## EnerJ
 
 This library implements some relatively-popular Deep Learning algorithms for propositional problems (e.g. written digits recognitions), such as
-Stacked Denoising Autoencoders[1] (SDAE) and Marginalized Stacked Denoising Autoencoders[2] (MSDAE).
+Stacked Denoising Autoencoders [1] (SDAE) and Marginalized Stacked Denoising Autoencoders [2] (MSDAE).
 
 The library also implements online learning of energy-based models for relational learning, such as the Linear and Bi-Linear models in [3], or the RESCAL model
 in [4].

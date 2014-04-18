@@ -1,6 +1,6 @@
 ## EnerJ
 
-This library implements some relatively-popular Deep Learning algorithms for propositional problems (e.g. written digits recognitions), such as Stacked Denoising Autoencoders [Vin10] (SDAE) and Marginalized Stacked Denoising Autoencoders [Che12] (MSDAE).
+This library implements some relatively-popular Deep Learning algorithms for propositional problems (e.g. written digits recognitions), such as Stacked Denoising Autoencoders [Vin10] and Marginalized Stacked Denoising Autoencoders [Che12].
 
 The library also implements a few online learning of energy-based models for relational learning, such as the Linear and Bi-Linear models in [Bor14], or the RESCAL model in [Nic11].
 

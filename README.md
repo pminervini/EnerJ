@@ -30,7 +30,9 @@ List<Pair<AbstractRegularizer, Double>> regularizers = Lists.newLinkedList();
 
 // SDAE (specifying input size and the size of the three hidden layers; Sigmoid is the activation function of choice)
 
-SDAE mlae = new SDAE(INPUT_SIZE, ImmutableList.of(LAYER_1_SIZE, LAYER_2_SIZE, LAYER_3_SIZE), Sigmoid.create(), loss, regularizers, RandomUtils.getPRNG());
+SDAE mlae = new SDAE(INPUT_SIZE,
+	ImmutableList.of(LAYER_1, LAYER_2, LAYER_3),
+	Sigmoid.create(), loss, regularizers, RandomUtils.getPRNG());
 
 // Number of iterations over the dataset
 final int ITS = 10;

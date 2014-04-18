@@ -7,8 +7,11 @@ The library also implements online learning of energy-based models for relationa
 in [4].
 
 [1] Vincent, P. et al. - Stacked denoising autoencoders: Learning useful representations in a deep network with a local denoising criterion - JMLR'10
+
 [2] Chen, M. et al. - Marginalized Stacked Denoising Autoencoders for Domain Adaptation - ICML'12
+
 [3] Bordes, A. et al. - A semantic matching energy function for learning with multi-relational data - ML'14
+
 [4] Nickel, M. et al. - A Three-Way Model for Collective Learning on Multi-Relational Data - ICML'11
 
 ## Example

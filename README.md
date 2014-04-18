@@ -18,7 +18,7 @@ Training a SDAE on the MNIST digits dataset:
 
 ```java
 // Loss function
-CrossEntropyLoss loss = CrossEntropyLoss.create();
+AbstractLossFunction loss = CrossEntropyLoss.create();
 
 // Regularizers
 List<Pair<AbstractRegularizer, Double>> regularizers = Lists.newLinkedList();

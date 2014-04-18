@@ -28,7 +28,8 @@ List<Pair<AbstractRegularizer, Double>> regularizers = Lists.newLinkedList();
 	regularizers.add(reg);
 }
 
-// SDAE (specifying input size and the size of the three hidden layers; Sigmoid is the activation function of choice)
+// SDAE (specifying input size and the size of the three hidden layers).
+//	Sigmoid is the activation function of choice.
 
 SDAE mlae = new SDAE(INPUT_SIZE,
 	ImmutableList.of(LAYER_1, LAYER_2, LAYER_3),

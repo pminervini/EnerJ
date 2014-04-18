@@ -1,18 +1,18 @@
 ## EnerJ
 
 This library implements some relatively-popular Deep Learning algorithms for propositional problems (e.g. written digits recognitions), such as
-Stacked Denoising Autoencoders [1] (SDAE) and Marginalized Stacked Denoising Autoencoders [2] (MSDAE).
+Stacked Denoising Autoencoders [ 1 ] (SDAE) and Marginalized Stacked Denoising Autoencoders [ 2 ] (MSDAE).
 
-The library also implements online learning of energy-based models for relational learning, such as the Linear and Bi-Linear models in [3], or the RESCAL model
-in [4].
+The library also implements online learning of energy-based models for relational learning, such as the Linear and Bi-Linear models in [ 3 ], or the RESCAL model
+in [ 4 ].
 
-[1] Vincent, P. et al. - Stacked denoising autoencoders: Learning useful representations in a deep network with a local denoising criterion - JMLR'10
+[ 1 ] Vincent, P. et al. - Stacked denoising autoencoders: Learning useful representations in a deep network with a local denoising criterion - JMLR'10
 
-[2] Chen, M. et al. - Marginalized Stacked Denoising Autoencoders for Domain Adaptation - ICML'12
+[ 2 ] Chen, M. et al. - Marginalized Stacked Denoising Autoencoders for Domain Adaptation - ICML'12
 
-[3] Bordes, A. et al. - A semantic matching energy function for learning with multi-relational data - ML'14
+[ 3 ] Bordes, A. et al. - A semantic matching energy function for learning with multi-relational data - ML'14
 
-[4] Nickel, M. et al. - A Three-Way Model for Collective Learning on Multi-Relational Data - ICML'11
+[ 4 ] Nickel, M. et al. - A Three-Way Model for Collective Learning on Multi-Relational Data - ICML'11
 
 ## Example
 

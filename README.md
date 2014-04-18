@@ -1,18 +1,16 @@
 ## EnerJ
 
-This library implements some relatively-popular Deep Learning algorithms for propositional problems (e.g. written digits recognitions), such as
-Stacked Denoising Autoencoders [ 1 ] (SDAE) and Marginalized Stacked Denoising Autoencoders [ 2 ] (MSDAE).
+This library implements some relatively-popular Deep Learning algorithms for propositional problems (e.g. written digits recognitions), such as Stacked Denoising Autoencoders [Vin10] (SDAE) and Marginalized Stacked Denoising Autoencoders [Che12] (MSDAE).
 
-The library also implements online learning of energy-based models for relational learning, such as the Linear and Bi-Linear models in [ 3 ], or the RESCAL model
-in [ 4 ].
+The library also implements online learning of energy-based models for relational learning, such as the Linear and Bi-Linear models in [Bor14], or the RESCAL model in [Nic11].
 
-[ 1 ] Vincent, P. et al. - Stacked denoising autoencoders: Learning useful representations in a deep network with a local denoising criterion - JMLR'10
+[Vin10] Vincent, P. et al. - Stacked denoising autoencoders: Learning useful representations in a deep network with a local denoising criterion - JMLR'10
 
-[ 2 ] Chen, M. et al. - Marginalized Stacked Denoising Autoencoders for Domain Adaptation - ICML'12
+[Che12] Chen, M. et al. - Marginalized Stacked Denoising Autoencoders for Domain Adaptation - ICML'12
 
-[ 3 ] Bordes, A. et al. - A semantic matching energy function for learning with multi-relational data - ML'14
+[Bor14] Bordes, A. et al. - A semantic matching energy function for learning with multi-relational data - ML'14
 
-[ 4 ] Nickel, M. et al. - A Three-Way Model for Collective Learning on Multi-Relational Data - ICML'11
+[Nic11] Nickel, M. et al. - A Three-Way Model for Collective Learning on Multi-Relational Data - ICML'11
 
 ## Example
 

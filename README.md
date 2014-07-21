@@ -2,7 +2,7 @@
 
 This library implements some relatively-popular Deep Learning algorithms for propositional problems (e.g. written digits recognitions), such as Stacked Denoising Autoencoders [Vin10] and Marginalized Stacked Denoising Autoencoders [Che12].
 
-The library also implements a few online learning of energy-based models for relational learning, such as the Linear and Bi-Linear models in [Bor14], or the RESCAL model in [Nic11].
+The library also implements a few online learning algorithms of energy-based models for multi-relational learning, such as the Linear and Bi-Linear models in [Bor14], or the RESCAL model in [Nic11].
 
 [Vin10] Vincent, P. et al. - Stacked denoising autoencoders: Learning useful representations in a deep network with a local denoising criterion - JMLR'10
 
